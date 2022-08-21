@@ -25,6 +25,11 @@ function createBoxes(amount) {
   refs.boxes.append(...boxesArr);
 }
 
+function destroyBoxes() {
+  refs.boxes.innerHTML = "";
+  refs.inputNumber.value = "";
+}
+
 let inputValue = 0;
 refs.btnCreate.addEventListener("click", () => createBoxes(inputValue));
 
@@ -32,7 +37,4 @@ refs.inputNumber.addEventListener("input", (event) => {
   inputValue = event.currentTarget.value;
 });
 
-refs.btnDestroy.addEventListener("click", () => {
-  refs.boxes.innerHTML = "";
-  refs.inputNumber.value = "";
-});
+refs.btnDestroy.addEventListener("click", destroyBoxes);
