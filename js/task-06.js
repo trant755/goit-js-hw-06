@@ -3,13 +3,11 @@ const refs = {
 };
 
 const testValidation = (event) => {
+  if (event.currentTarget.value === "") return;
+
   event.currentTarget.value.length > refs.validationInput.dataset.length
     ? refs.validationInput.classList.add("invalid")
     : refs.validationInput.classList.add("valid");
-
-  if (event.currentTarget.value === "") {
-    refs.validationInput.classList.remove("valid", "invalid");
-  }
 };
 
 const resetValidation = (event) =>
